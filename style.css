@@ -84,10 +84,19 @@
 
 .input-block span.placeholder {
     position: absolute;
-    margin: 5px 3px;
+    margin: 6px 3px;
+    font-size: 18px;
+    left: 0;
+    transition: all 0.3s;
+    transform-origin: 0% 0%;
+    pointer-events: none;
+    color: #C2A83E;
 }
 
 input[type=text] {
-    height: 25px;
-    background-color: #C2A83E;
+    height: 30px;
+    background-color: #243E36;
+    color: #C2A83E;
+    border: none;
+    border-bottom-style: dotted;
 }
