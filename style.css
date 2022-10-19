@@ -124,3 +124,10 @@ input[type=text] {
     background-color: #13566e;
     transition: 0.3s;
 }
+
+.validation-text {
+    display: none;
+    margin: 0;
+    font-size: 16px;
+    color: #ff0de3;
+}
