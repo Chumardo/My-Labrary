@@ -58,3 +58,31 @@
 #books td {
     padding: 20px 70px;
 }
+
+.input-form {
+    padding-top: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5%;
+    width: 80%;
+}
+
+.input-block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.input-block span.placeholder {
+    position: absolute;
+    margin: 2px 0;
+}
