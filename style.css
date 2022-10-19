@@ -100,3 +100,8 @@ input[type=text] {
     border: none;
     border-bottom-style: dotted;
 }
+
+.input-block input:valid + span.placeholder,
+.input-block input:focus + span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+}
