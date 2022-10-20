@@ -15,10 +15,6 @@ function addBookToLibrary(title, author, pages, status) {
     showBooksInLibrary();
 }
 
-// addBookToLibrary('title', 'author', 'pages', 'status') 
-// addBookToLibrary('The E-Myth', 'Michael E. Gerber', '226', 'read')
-// console.log(myLibrary)
-
 function showBooksInLibrary() {
     const bookList = document.querySelector('#table-body');
     bookList.textContent = ''
@@ -53,9 +49,25 @@ function listenClicks() {
     document.addEventListener('click', (event) => {
       const { target } = event;
       if (target.id === 'add-book') {
-        console.log('Form validation')
+        validateForm();
       }
     });
   }
 
 listenClicks();
+
+
+function validateForm() {
+    const form = document.querySelector('form');
+    const formTitle = document.querySelector('#title')
+    const formName = document.querySelector('#name')
+    const formPage = document.querySelector('#number')
+    const checkboxForm = document.querySelector('input[name="checkbox"]');
+
+    if (checkboxForm.checked) {
+        addBookToLibrary(formTitle.value, formName.value, formPage.value, 'read');
+    } else {
+        addBookToLibrary(formTitle.value, formName.value, formPage.value, 'unread');
+    }
+    form.reset();
+}
