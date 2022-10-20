@@ -90,11 +90,14 @@ function showLibraryStatistic() {
 
     let readCounter = 0;
     let unreadCounter = 0;
-    
+    let pagesCounter = 0;
+
     for (let i = 0; i < myLibrary.length; i += 1) {
         if (myLibrary[i].status === 'read') {
           readCounter += 1;
+          pagesCounter += parseInt(myLibrary[i].pages);
           booksRead.textContent = readCounter;
+          totalPages.textContent = pagesCounter;
         } else if (myLibrary[i].status === 'unread') {
           unreadCounter += 1;
           booksUnread.textContent = unreadCounter;
