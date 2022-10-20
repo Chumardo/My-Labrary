@@ -29,5 +29,20 @@ function showBooksInLibrary() {
         const title = document.createElement('td');
         title.textContent = myLibrary[i].title;
         bookRow.appendChild(title);
+
+        // AUTHOR
+        const author = document.createElement('td');
+        author.textContent = myLibrary[i].author;
+        bookRow.appendChild(author);
+
+        // PAGES
+        const pages = document.createElement('td');
+        pages.textContent = myLibrary[i].pages;
+        bookRow.appendChild(pages);
+
+        // SATUS
+        const status = document.createElement('td');
+        status.textContent = myLibrary[i].status;
+        bookRow.appendChild(status);
     }
 }
