@@ -87,6 +87,19 @@ function showLibraryStatistic() {
     booksUnread.textContent = 0;
     totalPages.textContent = 0;
     totalBooks.textContent = myLibrary.length;
+
+    let readCounter = 0;
+    let unreadCounter = 0;
+    
+    for (let i = 0; i < myLibrary.length; i += 1) {
+        if (myLibrary[i].status === 'read') {
+          readCounter += 1;
+          booksRead.textContent = readCounter;
+        } else if (myLibrary[i].status === 'unread') {
+          unreadCounter += 1;
+          booksUnread.textContent = unreadCounter;
+        }
+      }
 }
 
 showBooksInLibrary();
