@@ -15,9 +15,9 @@ function addBookToLibrary(title, author, pages, status) {
     showBooksInLibrary();
 }
 
-addBookToLibrary('title', 'author', 'pages', 'status') 
-addBookToLibrary('The E-Myth', 'Michael E. Gerber', '226', 'read')
-console.log(myLibrary)
+// addBookToLibrary('title', 'author', 'pages', 'status') 
+// addBookToLibrary('The E-Myth', 'Michael E. Gerber', '226', 'read')
+// console.log(myLibrary)
 
 function showBooksInLibrary() {
     const bookList = document.querySelector('#table-body');
@@ -47,3 +47,15 @@ function showBooksInLibrary() {
         bookRow.appendChild(status);
     }
 }
+
+
+function listenClicks() {
+    document.addEventListener('click', (event) => {
+      const { target } = event;
+      if (target.id === 'add-book') {
+        console.log('Form validation')
+      }
+    });
+  }
+
+listenClicks();
