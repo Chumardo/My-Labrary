@@ -51,6 +51,8 @@
 
 #book-head {
     background-color: #13566e;
+    position: sticky;
+    top: 0%;
 }
 
 #books {
