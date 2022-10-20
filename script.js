@@ -24,6 +24,7 @@ function addBookToLibrary(title, author, pages, status) {
 
 function showBooksInLibrary() {
     localStorage.setItem('books', JSON.stringify(myLibrary));
+    showLibraryStatistic();
     const bookList = document.querySelector('#table-body');
     bookList.textContent = ''
     for (let i = 0; i < myLibrary.length; i += 1) {
@@ -75,6 +76,17 @@ function validateForm() {
         addBookToLibrary(formTitle.value, formName.value, formPage.value, 'unread');
     }
     form.reset();
+}
+
+function showLibraryStatistic() {
+    const booksRead = document.querySelector('#books-read');
+    const booksUnread = document.querySelector('#books-unread');
+    const totalBooks = document.querySelector('#total-books');
+    const totalPages = document.querySelector('#total-pages');
+    booksRead.textContent = 0;
+    booksUnread.textContent = 0;
+    totalPages.textContent = 0;
+    totalBooks.textContent = myLibrary.length;
 }
 
 showBooksInLibrary();
