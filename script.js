@@ -55,7 +55,6 @@ function showBooksInLibrary() {
         const bookEdit = document.createElement('td');
         const editButton = document.createElement('button');
         editButton.classList.add('edit-book');
-        editButton.textContent = 'Edit';
         bookEdit.appendChild(editButton);
         bookRow.appendChild(bookEdit);
 

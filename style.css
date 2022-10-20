@@ -152,9 +152,17 @@ input[type=text] {
 }
 
 .delete-book{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background: url('images/remove.png');
+    border: none;
+    background-size: cover;
+}
+
+.edit-book {
+    width: 20px;
+    height: 20px;
+    background: url('images/edit.png');
     border: none;
     background-size: cover;
 }
