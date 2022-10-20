@@ -50,6 +50,23 @@ function showBooksInLibrary() {
         const status = document.createElement('td');
         status.textContent = myLibrary[i].status;
         bookRow.appendChild(status);
+
+        // EDIT
+        const bookEdit = document.createElement('td');
+        const editButton = document.createElement('button');
+        editButton.classList.add('edit-book');
+        editButton.textContent = 'Edit';
+        bookEdit.appendChild(editButton);
+        bookRow.appendChild(bookEdit);
+
+
+        // DELETE
+        const bookDelete = document.createElement('td');
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-book');
+        deleteButton.textContent = 'Delete';
+        bookDelete.appendChild(deleteButton);
+        bookRow.appendChild(bookDelete);
     }
 }
 
@@ -57,9 +74,14 @@ function showBooksInLibrary() {
 function listenClicks() {
     document.addEventListener('click', (event) => {
       const { target } = event;
+      const tr = target.parentNode.parentNode.rowIndex - 1;
       if (target.id === 'add-book') {
         validateForm();
+      } else if (target.classList.contains('delete-book')) {
+        myLibrary.splice(tr, 1);
+        console.log("Delete");
       }
+      showBooksInLibrary();
     });
   }
 
