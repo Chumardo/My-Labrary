@@ -9,6 +9,13 @@ class Book {
     }
 }
 
+if (localStorage.getItem('books') === null) {
+    myLibrary = [];
+} else {
+    const booksFromStorage = JSON.parse(localStorage.getItem('books'));
+    myLibrary = booksFromStorage;
+}
+
 function addBookToLibrary(title, author, pages, status) {
     const book = new Book(title, author, pages, status);
     myLibrary.push(book);
@@ -16,6 +23,7 @@ function addBookToLibrary(title, author, pages, status) {
 }
 
 function showBooksInLibrary() {
+    localStorage.setItem('books', JSON.stringify(myLibrary));
     const bookList = document.querySelector('#table-body');
     bookList.textContent = ''
     for (let i = 0; i < myLibrary.length; i += 1) {
@@ -54,9 +62,6 @@ function listenClicks() {
     });
   }
 
-listenClicks();
-
-
 function validateForm() {
     const form = document.querySelector('form');
     const formTitle = document.querySelector('#title')
@@ -71,3 +76,6 @@ function validateForm() {
     }
     form.reset();
 }
+
+showBooksInLibrary();
+listenClicks();
