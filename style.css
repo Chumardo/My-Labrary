@@ -11,6 +11,8 @@
 .sidebar {
     background-color: #243E36;
     height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 .header {
@@ -23,12 +25,19 @@
     color: #C2A83E;
     width: 100%;
     font-size: 22px;
+    position: sticky;
+    top: 10%;
+}
+
+.input-form {
+    position: sticky;
+    top: 15%;
 }
 
 .main {
     background-color: #0B2027;
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 5% 95%;
 }
 
 .statistic {
@@ -48,8 +57,7 @@
 #books {
     border-collapse: collapse;
     margin-left: 8%;
-    margin-top: 4%;
-    color: white;
+    color: green;
 }
 
 #books td {
