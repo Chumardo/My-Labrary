@@ -41,18 +41,15 @@
     font-weight: bold;
 }
 
-.books-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 #book-head {
     background-color: #13566e;
 }
 
 #books {
     border-collapse: collapse;
+    margin-left: 8%;
+    margin-top: 4%;
+    color: white;
 }
 
 #books td {
@@ -139,4 +136,8 @@ input[type=text] {
     margin: 0;
     font-size: 16px;
     color: #ff0de3;
+}
+
+#table-body td{
+    border-bottom-style: dashed;
 }
