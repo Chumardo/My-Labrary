@@ -21,6 +21,7 @@ console.log(myLibrary)
 
 function showBooksInLibrary() {
     const bookList = document.querySelector('#table-body');
+    bookList.textContent = ''
     for (let i = 0; i < myLibrary.length; i += 1) {
         const bookRow = document.createElement('tr');
         bookList.appendChild(bookRow);
