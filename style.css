@@ -150,3 +150,11 @@ input[type=text] {
 #table-body td{
     border-bottom-style: dashed;
 }
+
+.delete-book{
+    width: 25px;
+    height: 25px;
+    background: url('images/remove.png');
+    border: none;
+    background-size: cover;
+}

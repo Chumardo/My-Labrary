@@ -64,7 +64,6 @@ function showBooksInLibrary() {
         const bookDelete = document.createElement('td');
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-book');
-        deleteButton.textContent = 'Delete';
         bookDelete.appendChild(deleteButton);
         bookRow.appendChild(bookDelete);
     }
