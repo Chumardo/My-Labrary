@@ -91,6 +91,14 @@ function editModal(tr) {
   const editPages = document.querySelector('#edit-number');
   const editStatus = document.querySelector('#edit-checkbox');
   editModal.style.display = 'flex';
+  editModal.addEventListener('click', (event) => {
+    const { target } = event;
+    if (target.classList.contains('cancel')) {
+      editModal.style.display = 'none';
+    } else if (target.classList.contains('update-book')) {
+      console.log("update")
+    }
+  })
   editTitle.value = myLibrary[tr].title;
   editAuthor.value = myLibrary[tr].author;
   editPages.value = myLibrary[tr].pages;
