@@ -91,7 +91,7 @@
     margin-bottom: 5%;
 }
 
-.input-block span.placeholder {
+.input-block span.placeholder, .edit-input-block span.placeholder {
     position: absolute;
     margin: 6px 3px;
     font-size: 18px;
@@ -112,6 +112,11 @@ input[type=text] {
 
 .input-block input:valid + span.placeholder,
 .input-block input:focus + span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+}
+
+.edit-input-block input:valid + span.placeholder,
+.edit-input-block input:focus + span.placeholder {
   transform: scale(0.8) translateY(-30px);
 }
 
@@ -170,7 +175,7 @@ input[type=text] {
 }
 
 
-#remove-modal {
+#remove-modal, #edit-modal{
     display: none;
     position: absolute;
     left: 0;
@@ -191,7 +196,7 @@ input[type=text] {
     box-shadow: rgb(46, 46, 46, 0.2) 0px 2px 8px 0px;
 }
 
-.remove-modal-header {
+.remove-modal-header, .edit-modal-header {
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -200,7 +205,7 @@ input[type=text] {
     color: white;
 }
 
-.remove-close-modal {
+.remove-close-modal, .edit-close-modal {
     align-self: flex-start;
     color: #366db6;
     font-size: 30px;
@@ -246,7 +251,53 @@ input[type=text] {
     border-radius: 20px;
 }
 
+.edit-modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    background-color: #243E36;
+    color: white;
+    font-weight: bold;
+    height: 100%;
+}
 
-#edit-modal {
-    display: none;
+.edit-modal-card{
+    position: relative;
+    margin: auto;
+    width: 25%;
+    height: 50%;
+    border: 2px solid #861948;
+    border-radius: 2px;
+    box-shadow: rgb(46, 46, 46, 0.2) 0px 2px 8px 0px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.edit-input-block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    margin-bottom: 10%;
+}
+
+#edit-modal form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+
+#edit-modal .checkbox {
+    color: #C2A83E;
+    padding-bottom: 5%;
+}
+
+#edit-modal .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
 }
