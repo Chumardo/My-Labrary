@@ -77,10 +77,30 @@ function listenClicks() {
         validateForm();
       } else if (target.classList.contains('delete-book')) {
         removeModal(tr);
+      } else if (target.classList.contains('edit-book')) {
+        editModal(tr)
       }
       showBooksInLibrary();
     });
   }
+
+function editModal(tr) {
+  const editModal = document.querySelector('#edit-modal');
+  const editTitle = document.querySelector('#edit-title');
+  const editAuthor = document.querySelector('#edit-name');
+  const editPages = document.querySelector('#edit-number');
+  const editStatus = document.querySelector('#edit-checkbox');
+  editModal.style.display = 'flex';
+  editTitle.value = myLibrary[tr].title;
+  editAuthor.value = myLibrary[tr].author;
+  editPages.value = myLibrary[tr].pages;
+  if (myLibrary[tr].status === "read") {
+    editStatus.checked = true; 
+  } else {
+    editStatus.checked = false; 
+  }
+}
+
 
 function removeModal(tr) {
   const modal = document.querySelector('#remove-modal');
