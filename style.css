@@ -213,6 +213,8 @@ input[type=text] {
     align-items: center;
     background-color: #366db6;
     color: white;
+    font-size: 16px;
+    font-weight: bold;
 }
 .remove-modal-options {
     background-color: #366db6;
@@ -220,4 +222,24 @@ input[type=text] {
     justify-content: center;
     align-items: center;
     padding-bottom: 5%;
+    gap: 5%;
+}
+
+.remove-modal-options button {
+    height: 30px;
+    width: 70px;
+}
+
+.cancel-removal {
+    background-color: #243E36;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.confirm-removal {
+    background-color: #840808;
+    color: white;
+    border: none;
+    border-radius: 20px;
 }
