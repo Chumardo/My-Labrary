@@ -84,7 +84,9 @@ function listenClicks() {
 
 function removeModal(tr) {
   const modal = document.querySelector('#remove-modal');
+  const questionPar = document.querySelector('#remove-question');
   modal.style.display = 'flex';
+  questionPar.textContent = `Do you really want to delete "${myLibrary[tr].title}" from your library?`
   modal.addEventListener('click', (event) => {
     const { target } = event;
     if (target.classList.contains('close')) {
