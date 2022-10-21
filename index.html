@@ -1,80 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
     <title>My Library</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="header">
-                <img src="images/logo.png" alt="">
-                <h1>My Library</h1>
-            </div>
-            <div class="input-form">
-                <form>
-                    <div class="input-block">
-                      <input id="title" type="text" name="title" autocomplete="off" required>
-                      <span class="placeholder">What is the title of the book?</span>
-                      <div class="validation-block">
-                        <p class="validation-text title">Please fill out this field.</p>
-                      </div>
-                    </div>
-              
-                    <div class="input-block">
-                      <input id="name" type="text" name="name" autocomplete="off" required>
-                      <span class="placeholder">Who is the author of the book?</span>
-                      <div class="validation-block">
-                        <p class="validation-text name">Please fill out this field.</p>
-                      </div>
-                    </div>
-              
-                    <div class="input-block">
-                      <input id="number" type="text" name="number" autocomplete="off" required>
-                      <span class="placeholder">How many pages are in the book?</span>
-                      <div class="validation-block">
-                        <p class="validation-text number">Please enter a number bigger than 0.</p>
-                      </div>
-                    </div>
-              
-                    <label class="checkbox">
-                      <span class="checkbox-input">
-                        <input type="checkbox" name="checkbox" autocomplete="off">
-                      </span>
-                      <span class="checkbox-label">I have already read this book!</span>
-                    </label>
-                    <input type="button" value="ADD A NEW BOOK" id="add-book">
-                  </form>
-            </div>
+      <div class="sidebar">
+        <div class="header">
+          <img src="images/logo.png" alt="" />
+          <h1>My Library</h1>
         </div>
-        <div class="main">
-            <div class="statistic">
-                <p>READ BOOKS: <span id="books-read"></span></p>
-                <p>UNREAD BOOKS: <span id="books-unread"></span></p>
-                <p>TOTAL BOOKS: <span id="total-books"></span></p>
-                <p>TOTAL READ PAGES: <span id="total-pages"></span></p>
+        <div class="input-form">
+          <form>
+            <div class="input-block">
+              <input
+                id="title"
+                type="text"
+                name="title"
+                autocomplete="off"
+                required
+              />
+              <span class="placeholder">What is the title of the book?</span>
+              <div class="validation-block">
+                <p class="validation-text title">Please fill out this field.</p>
+              </div>
             </div>
-            <div class="books-list">
-                <table id="books">
-                    <thead id="book-head">
-                      <tr>
-                        <td>Title</td>
-                        <td>Author</td>
-                        <td>Pages</td>
-                        <td>Status</td>
-                        <td>Edit</td>
-                        <td>Remove</td>
-                      </tr>
-                    </thead>
-                    <tbody id="table-body"></tbody>
-                  </table>
+
+            <div class="input-block">
+              <input
+                id="name"
+                type="text"
+                name="name"
+                autocomplete="off"
+                required
+              />
+              <span class="placeholder">Who is the author of the book?</span>
+              <div class="validation-block">
+                <p class="validation-text name">Please fill out this field.</p>
+              </div>
             </div>
+
+            <div class="input-block">
+              <input
+                id="number"
+                type="text"
+                name="number"
+                autocomplete="off"
+                required
+              />
+              <span class="placeholder">How many pages are in the book?</span>
+              <div class="validation-block">
+                <p class="validation-text number">
+                  Please enter a number bigger than 0.
+                </p>
+              </div>
+            </div>
+
+            <label class="checkbox">
+              <span class="checkbox-input">
+                <input type="checkbox" name="checkbox" autocomplete="off" />
+              </span>
+              <span class="checkbox-label">I have already read this book!</span>
+            </label>
+            <input type="button" value="ADD A NEW BOOK" id="add-book" />
+          </form>
         </div>
+      </div>
+      <div class="main">
+        <div class="statistic">
+          <p>READ BOOKS: <span id="books-read"></span></p>
+          <p>UNREAD BOOKS: <span id="books-unread"></span></p>
+          <p>TOTAL BOOKS: <span id="total-books"></span></p>
+          <p>TOTAL READ PAGES: <span id="total-pages"></span></p>
+        </div>
+        <div class="books-list">
+          <table id="books">
+            <thead id="book-head">
+              <tr>
+                <td>Title</td>
+                <td>Author</td>
+                <td>Pages</td>
+                <td>Status</td>
+                <td>Edit</td>
+                <td>Remove</td>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+
+          <div id="remove-modal" class="close">
+            <div class="remove-modal-card">
+              <div class="remove-modal-header">
+                <h2>BOOK REMOVAL</h2>
+                <span class="remove-close-modal close">&times;</span>
+              </div>
+              <div class="remove-modal-content">
+                <p>Do you really want to delete the book from your library?</p>
+              </div>
+              <div class="remove-modal-options">
+                <button type="button" class="cancel-removal close">Cancel</button>
+                <button type="button" class="confirm-removal">DELETE</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-</body>
-<script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
 </html>
