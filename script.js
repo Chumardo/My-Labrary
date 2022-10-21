@@ -96,7 +96,7 @@ function editModal(tr) {
     if (target.classList.contains('cancel')) {
       editModal.style.display = 'none';
     } else if (target.classList.contains('update-book')) {
-      console.log("update")
+      updateBook(tr);
     }
   })
   editTitle.value = myLibrary[tr].title;
@@ -109,6 +109,32 @@ function editModal(tr) {
   }
 }
 
+function updateBook(tr) {
+  let editModal = document.querySelector('#edit-modal');
+  let editTitle = document.querySelector('#edit-title');
+  let editAuthor = document.querySelector('#edit-name');
+  let editPages = document.querySelector('#edit-number');
+  let editStatus = document.querySelector('#edit-checkbox');
+  let updTitle = editTitle.value;
+  let updAuthor = editAuthor.value;
+  let updPages = editPages.value;
+  let updStatus = ''
+  if (editStatus.checked == true) {
+    updStatus = 'read';
+    myLibrary[tr].title = updTitle;
+    myLibrary[tr].author = updAuthor;
+    myLibrary[tr].pages = updPages;
+    myLibrary[tr].status = updStatus;
+    editModal.style.display = 'none';
+  } else {
+    updStatus = 'unread';
+    myLibrary[tr].title = updTitle;
+    myLibrary[tr].author = updAuthor;
+    myLibrary[tr].pages = updPages;
+    myLibrary[tr].status = updStatus;
+    editModal.style.display = 'none';
+  }
+}
 
 function removeModal(tr) {
   const modal = document.querySelector('#remove-modal');
