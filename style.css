@@ -5,7 +5,7 @@
 
 .container {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 25% 75%;
 }
 
 .sidebar {
@@ -59,10 +59,12 @@
     border-collapse: collapse;
     margin-left: 7%;
     color: white;
+    word-wrap: break-word;
 }
 
 #books td {
     padding: 20px 70px;
+    max-width: 60px;
 }
 
 .input-form {
